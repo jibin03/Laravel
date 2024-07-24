@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <header>
+    
+    </header>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Cart</h1>
+        <div id="cart-items">
+    </div>
+
+    <footer class="bg-light text-dark text-center py-2">
+        <p>@Flipkart</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+   
+    <script>
+       
+        const cartItems = [
+            { name: 'Askprints A5 Sketch book 50 Sheets Set of 2 - 5.8 x 8.3 Inch ', price: ₹ 112 }
+           
+        ];
+
+        function displayCartItems() {
+            const cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = '';
+
+            cartItems.forEach(item => {
+                const cartItemHTML = `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">${item.name}</h5>
+                            <p class="card-text">Price: ₹ ${item.price}</p>
+                        </div>
+                    </div>
+                `;
+                cartContainer.innerHTML += cartItemHTML;
+            });
+        }
+        window.onload = function() {
+            displayCartItems();
+        };
+    </script>
+</body>
+
+</html>
